@@ -20,7 +20,7 @@ struct ListView: View {
                         showingSheet.toggle()
                     }
                     .fullScreenCover(isPresented: $showingSheet) {
-                        AddStockView()
+                        AddStockView(viewModel: DefaultAddStockViewModel())
                     }
                 }
         }

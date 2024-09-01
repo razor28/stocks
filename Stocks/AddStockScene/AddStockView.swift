@@ -7,26 +7,22 @@
 
 import SwiftUI
 
-struct AddStockView: View {
+struct AddStockView<ViewModel: AddStockViewModel>: View {
     @Environment(\.dismiss) var dismiss
 
-    let stocks = [
-        "AACG|ATA Creativity Global",
-        "AADI|Aadi Bioscience, Inc.",
-        "AAGR|African Agriculture Holdings Inc."
-    ]
-    @State private var searchText = ""
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(searchResults, id: \.self) { name in
-                    NavigationLink {
-                        Text(name)
-                    } label: {
-                        Text(name)
-                    }
+                ForEach(viewModel.searchResults, id: \.self) { commanStock in
+                    StockItemView(commanStock: commanStock, selectionAction: {
+                        viewModel.didAdd(commanStock: commanStock)
+                    })
                 }
+            }
+            .onAppear {
+                viewModel.onAppear()
             }
             .toolbar {
                 Button("Dismiss") {
@@ -35,18 +31,18 @@ struct AddStockView: View {
             }
             .navigationTitle("Stocks")
         }
-        .searchable(text: $searchText)
+        .searchable(text: $viewModel.searchText)
         .onSubmit(of: .search) {
-            print("Did submit search")
+            viewModel.onSearchSubmit()
         }
-    }
-    
-    var searchResults: [String] {
-        searchText.isEmpty ? stocks : stocks.filter { $0.contains(searchText) }
+        .onChange(of: viewModel.searchText) { _, _ in
+            viewModel.onSearchChange()
+        }
+        
     }
 }
 
 #Preview {
-    AddStockView()
+    AddStockView(viewModel: DefaultAddStockViewModel())
 }
 
