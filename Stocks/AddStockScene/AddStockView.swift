@@ -18,6 +18,7 @@ struct AddStockView<ViewModel: AddStockViewModel>: View {
                 ForEach(viewModel.searchResults, id: \.self) { commanStock in
                     StockItemView(commanStock: commanStock, selectionAction: {
                         viewModel.didAdd(commanStock: commanStock)
+                        dismiss()
                     })
                 }
             }
@@ -43,6 +44,6 @@ struct AddStockView<ViewModel: AddStockViewModel>: View {
 }
 
 #Preview {
-    AddStockView(viewModel: DefaultAddStockViewModel())
+    AddStockView(viewModel: DefaultAddStockViewModel(useCase: DefaultCommanStockUseCase(repository: DefaultCommanStockRepository())))
 }
 

@@ -24,7 +24,9 @@ protocol AddStockViewModel: AddStockViewModelInput, AddStockViewModelOutput, Obs
 }
 
 class DefaultAddStockViewModel: AddStockViewModel {
+    private let useCase: CommanStockUseCase
     private var commanStocks: [String] = []
+    
     @Published var searchText = ""
     
     var searchResults: [String] {
@@ -34,6 +36,10 @@ class DefaultAddStockViewModel: AddStockViewModel {
         }
     }
 
+    init(useCase: CommanStockUseCase) {
+        self.useCase = useCase
+    }
+    
     func onAppear() {
         Task {
             do {
@@ -54,7 +60,7 @@ class DefaultAddStockViewModel: AddStockViewModel {
     }
 
     func didAdd(commanStock: String) {
-        
+        useCase.add(commanStock: commanStock)
     }
 
     private func readLineByLine(from fileUrl: URL) async throws {

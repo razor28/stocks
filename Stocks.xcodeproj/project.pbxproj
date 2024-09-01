@@ -19,6 +19,9 @@
 		D899657A2C8514CD00713723 /* CommanStocks.txt in Resources */ = {isa = PBXBuildFile; fileRef = D89965792C8514CD00713723 /* CommanStocks.txt */; };
 		D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899657B2C85162400713723 /* AddStockViewModel.swift */; };
 		D89965802C85222F00713723 /* StockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899657F2C85222F00713723 /* StockItemView.swift */; };
+		D89965832C8528CF00713723 /* CommanStockUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965822C8528CF00713723 /* CommanStockUseCase.swift */; };
+		D89965882C852A1800713723 /* CommanStockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965872C852A1800713723 /* CommanStockRepository.swift */; };
+		D899658A2C852A9C00713723 /* DefaultCommanStockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965892C852A9C00713723 /* DefaultCommanStockRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		D89965792C8514CD00713723 /* CommanStocks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CommanStocks.txt; sourceTree = "<group>"; };
 		D899657B2C85162400713723 /* AddStockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewModel.swift; sourceTree = "<group>"; };
 		D899657F2C85222F00713723 /* StockItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemView.swift; sourceTree = "<group>"; };
+		D89965822C8528CF00713723 /* CommanStockUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanStockUseCase.swift; sourceTree = "<group>"; };
+		D89965872C852A1800713723 /* CommanStockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanStockRepository.swift; sourceTree = "<group>"; };
+		D89965892C852A9C00713723 /* DefaultCommanStockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommanStockRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,8 @@
 		D82AF0D02C84FA2900B4B5FC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D89965852C8529E000713723 /* Interfaces */,
+				D89965812C8528AD00713723 /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 		D82AF0D12C84FA3100B4B5FC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D89965842C85299000713723 /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -204,6 +213,38 @@
 				D82AF0A82C84F95800B4B5FC /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D89965812C8528AD00713723 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				D89965822C8528CF00713723 /* CommanStockUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		D89965842C85299000713723 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D89965892C852A9C00713723 /* DefaultCommanStockRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D89965852C8529E000713723 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				D89965862C8529FB00713723 /* Repositories */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		D89965862C8529FB00713723 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D89965872C852A1800713723 /* CommanStockRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +382,9 @@
 				D89965752C8503E900713723 /* AddStockView.swift in Sources */,
 				D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */,
 				D82AF0A52C84F95700B4B5FC /* StocksApp.swift in Sources */,
+				D89965832C8528CF00713723 /* CommanStockUseCase.swift in Sources */,
+				D89965882C852A1800713723 /* CommanStockRepository.swift in Sources */,
+				D899658A2C852A9C00713723 /* DefaultCommanStockRepository.swift in Sources */,
 				D89965802C85222F00713723 /* StockItemView.swift in Sources */,
 				D82AF0D72C84FDF500B4B5FC /* ListView.swift in Sources */,
 			);
