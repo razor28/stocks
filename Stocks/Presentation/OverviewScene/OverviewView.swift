@@ -13,6 +13,13 @@ struct OverviewView: View {
             Text("Start")
             .navigationTitle("Overview")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button(action: { }, label: {
+                    NavigationLink(destination: ListView()) {
+                        Text("List")
+                    }
+                })
+            }
         }
     }
 }
