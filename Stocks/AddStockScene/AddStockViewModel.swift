@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftData
 
 protocol AddStockViewModelInput {
     func onAppear()
     func onSearchSubmit()
     func onSearchChange()
-    func didAdd(commanStock: String)
+    func didAdd(commanStock: String, context: ModelContext)
 }
 
 protocol AddStockViewModelOutput {
@@ -59,8 +60,14 @@ class DefaultAddStockViewModel: AddStockViewModel {
 //        searchText.isEmpty ? commanStocks : commanStocks.filter { $0.contains(searchText) }
     }
 
-    func didAdd(commanStock: String) {
-        useCase.add(commanStock: commanStock)
+    func didAdd(commanStock: String, context: ModelContext) {
+        let tickerName = commanStock.split(separator: "|")
+        guard 
+            let ticker = tickerName.first,
+            let name = tickerName.last
+        else { return }
+        let entity = StockEntity(ticker: String(ticker), companyName: String(name))
+        context.insert(entity)
     }
 
     private func readLineByLine(from fileUrl: URL) async throws {

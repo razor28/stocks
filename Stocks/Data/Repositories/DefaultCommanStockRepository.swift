@@ -7,20 +7,15 @@
 
 import Foundation
 import Combine
+import SwiftData
 
 final class DefaultCommanStockRepository: CommanStockRepository {
-    private let key = "FavoriteStocks"
-
     func add(commanStock: String) {
-        var commanStocks: [String] = (UserDefaults.standard.array(forKey: key) as? [String]) ?? []
-        commanStocks.append(commanStock)
-        UserDefaults.standard.setValue(commanStocks, forKey: key)
+
     }
 
     func delete(commanStock: String) {
-        var commanStocks: [String] = (UserDefaults.standard.array(forKey: key) as? [String]) ?? []
-        commanStocks.removeAll(where: { $0 == commanStock })
-        UserDefaults.standard.setValue(commanStocks, forKey: key)
+
     }
 
     func stocksPublisher() -> AnyPublisher<[String], Never> {
@@ -31,7 +26,11 @@ final class DefaultCommanStockRepository: CommanStockRepository {
     }
 
     func fetchSelectedStocks() -> [String] {
-        (UserDefaults.standard.array(forKey: key) as? [String]) ?? []
+        return []
+    }
+
+    func add(stock: Stock) {
+        
     }
 }
 
@@ -41,3 +40,8 @@ extension UserDefaults {
     }
 }
 
+private extension Stock {
+    var stockEntity: StockEntity {
+        StockEntity(ticker: ticker, companyName: companyName)
+    }
+}

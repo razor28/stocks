@@ -6,20 +6,27 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ListView<ViewModel: ListViewViewModel>: View {
+    @Environment(\.modelContext) var context
     @State private var showingSheet = false
 
     @ObservedObject var viewModel: ViewModel
+    
+    @Query(sort: \StockEntity.ticker) var stocks: [StockEntity] 
 
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.selectedStocks, id: \.self) { commanStock in
-                    StockItemView(commanStock: commanStock, selectionAction: {
+                ForEach(stocks, id: \.self) { entity in
+                    StockItemView(commanStock: "\(entity.ticker)|\(entity.companyName)", selectionAction: {
                     })
                 }.onDelete(perform: { indexSet in
-                    viewModel.didDelete(at: indexSet)
+                    for index in indexSet {
+                        let entity = stocks[index]
+                        viewModel.didDelete(stock: entity, context: context)
+                    }
                 })
                 
             }.onAppear {

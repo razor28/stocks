@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddStockView<ViewModel: AddStockViewModel>: View {
+    @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
 
     @ObservedObject var viewModel: ViewModel
@@ -17,7 +18,7 @@ struct AddStockView<ViewModel: AddStockViewModel>: View {
             List {
                 ForEach(viewModel.searchResults, id: \.self) { commanStock in
                     StockItemView(commanStock: commanStock, selectionAction: {
-                        viewModel.didAdd(commanStock: commanStock)
+                        viewModel.didAdd(commanStock: commanStock, context: context)
                         dismiss()
                     })
                 }

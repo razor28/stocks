@@ -9,6 +9,7 @@ import Combine
 
 protocol CommanStockUseCase {
     func add(commanStock: String)
+    func add(stock: Stock)
     func delete(commanStock: String)
     func stocksPublisher() -> AnyPublisher<[String], Never>
     func fetchSelectedStocks() -> [String]
@@ -23,6 +24,10 @@ final class DefaultCommanStockUseCase: CommanStockUseCase {
 
     func add(commanStock: String) {
         repository.add(commanStock: commanStock)
+    }
+
+    func add(stock: Stock) {
+        repository.add(stock: stock)
     }
 
     func delete(commanStock: String) {

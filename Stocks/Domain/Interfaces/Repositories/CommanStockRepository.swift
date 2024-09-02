@@ -13,4 +13,5 @@ protocol CommanStockRepository {
     func delete(commanStock: String)
     func stocksPublisher() -> AnyPublisher<[String], Never>
     func fetchSelectedStocks() -> [String]
+    func add(stock: Stock)
 }

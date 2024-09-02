@@ -15,6 +15,8 @@
 		D82AF0C22C84F95800B4B5FC /* StocksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82AF0C12C84F95800B4B5FC /* StocksUITestsLaunchTests.swift */; };
 		D82AF0D42C84FABF00B4B5FC /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82AF0D32C84FABF00B4B5FC /* OverviewView.swift */; };
 		D82AF0D72C84FDF500B4B5FC /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82AF0D62C84FDF500B4B5FC /* ListView.swift */; };
+		D89582FA2C86422E002D688E /* StockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89582F92C86422E002D688E /* StockEntity.swift */; };
+		D89582FD2C864601002D688E /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89582FC2C864601002D688E /* Stock.swift */; };
 		D89965752C8503E900713723 /* AddStockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965742C8503E900713723 /* AddStockView.swift */; };
 		D899657A2C8514CD00713723 /* CommanStocks.txt in Resources */ = {isa = PBXBuildFile; fileRef = D89965792C8514CD00713723 /* CommanStocks.txt */; };
 		D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899657B2C85162400713723 /* AddStockViewModel.swift */; };
@@ -54,6 +56,8 @@
 		D82AF0C12C84F95800B4B5FC /* StocksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D82AF0D32C84FABF00B4B5FC /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		D82AF0D62C84FDF500B4B5FC /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		D89582F92C86422E002D688E /* StockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockEntity.swift; sourceTree = "<group>"; };
+		D89582FC2C864601002D688E /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		D89965742C8503E900713723 /* AddStockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockView.swift; sourceTree = "<group>"; };
 		D89965792C8514CD00713723 /* CommanStocks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CommanStocks.txt; sourceTree = "<group>"; };
 		D899657B2C85162400713723 /* AddStockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewModel.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		D82AF0D02C84FA2900B4B5FC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D89582FB2C8645E1002D688E /* Models */,
 				D89965852C8529E000713723 /* Interfaces */,
 				D89965812C8528AD00713723 /* UseCases */,
 			);
@@ -177,6 +182,7 @@
 		D82AF0D12C84FA3100B4B5FC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D89582F82C864213002D688E /* Models */,
 				D89965842C85299000713723 /* Repositories */,
 			);
 			path = Data;
@@ -197,6 +203,22 @@
 				D899658D2C852F0300713723 /* ListViewViewModel.swift */,
 			);
 			path = ListScene;
+			sourceTree = "<group>";
+		};
+		D89582F82C864213002D688E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D89582F92C86422E002D688E /* StockEntity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D89582FB2C8645E1002D688E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D89582FC2C864601002D688E /* Stock.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D89965732C8503C000713723 /* AddStockScene */ = {
@@ -383,8 +405,10 @@
 			files = (
 				D82AF0D42C84FABF00B4B5FC /* OverviewView.swift in Sources */,
 				D89965752C8503E900713723 /* AddStockView.swift in Sources */,
+				D89582FD2C864601002D688E /* Stock.swift in Sources */,
 				D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */,
 				D899658E2C852F0300713723 /* ListViewViewModel.swift in Sources */,
+				D89582FA2C86422E002D688E /* StockEntity.swift in Sources */,
 				D82AF0A52C84F95700B4B5FC /* StocksApp.swift in Sources */,
 				D89965832C8528CF00713723 /* CommanStockUseCase.swift in Sources */,
 				D89965882C852A1800713723 /* CommanStockRepository.swift in Sources */,
