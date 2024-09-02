@@ -7,12 +7,24 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct ListView<ViewModel: ListViewViewModel>: View {
     @State private var showingSheet = false
+
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         NavigationStack {
-            Text("listView")
+            List {
+                ForEach(viewModel.selectedStocks, id: \.self) { commanStock in
+                    StockItemView(commanStock: commanStock, selectionAction: {
+                    })
+                }.onDelete(perform: { indexSet in
+                    viewModel.didDelete(at: indexSet)
+                })
+                
+            }.onAppear {
+                viewModel.onAppear()
+            }
                 .navigationTitle("List of Stocks")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -28,5 +40,5 @@ struct ListView: View {
 }
 
 #Preview {
-    ListView()
+    ListView(viewModel: DefaultListViewModel(useCase: DefaultCommanStockUseCase(repository: DefaultCommanStockRepository())))
 }

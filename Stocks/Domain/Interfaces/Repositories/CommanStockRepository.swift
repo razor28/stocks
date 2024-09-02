@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 protocol CommanStockRepository {
     func add(commanStock: String)
+    func delete(commanStock: String)
+    func stocksPublisher() -> AnyPublisher<[String], Never>
+    func fetchSelectedStocks() -> [String]
 }

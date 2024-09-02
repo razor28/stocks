@@ -15,7 +15,7 @@ struct OverviewView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button(action: { }, label: {
-                    NavigationLink(destination: ListView()) {
+                    NavigationLink(destination: ListView(viewModel: DefaultListViewModel(useCase: DefaultCommanStockUseCase(repository: DefaultCommanStockRepository())))) {
                         Text("List")
                     }
                 })

@@ -22,6 +22,7 @@
 		D89965832C8528CF00713723 /* CommanStockUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965822C8528CF00713723 /* CommanStockUseCase.swift */; };
 		D89965882C852A1800713723 /* CommanStockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965872C852A1800713723 /* CommanStockRepository.swift */; };
 		D899658A2C852A9C00713723 /* DefaultCommanStockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965892C852A9C00713723 /* DefaultCommanStockRepository.swift */; };
+		D899658E2C852F0300713723 /* ListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899658D2C852F0300713723 /* ListViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		D89965822C8528CF00713723 /* CommanStockUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanStockUseCase.swift; sourceTree = "<group>"; };
 		D89965872C852A1800713723 /* CommanStockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommanStockRepository.swift; sourceTree = "<group>"; };
 		D89965892C852A9C00713723 /* DefaultCommanStockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommanStockRepository.swift; sourceTree = "<group>"; };
+		D899658D2C852F0300713723 /* ListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				D82AF0D62C84FDF500B4B5FC /* ListView.swift */,
+				D899658D2C852F0300713723 /* ListViewViewModel.swift */,
 			);
 			path = ListScene;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				D82AF0D42C84FABF00B4B5FC /* OverviewView.swift in Sources */,
 				D89965752C8503E900713723 /* AddStockView.swift in Sources */,
 				D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */,
+				D899658E2C852F0300713723 /* ListViewViewModel.swift in Sources */,
 				D82AF0A52C84F95700B4B5FC /* StocksApp.swift in Sources */,
 				D89965832C8528CF00713723 /* CommanStockUseCase.swift in Sources */,
 				D89965882C852A1800713723 /* CommanStockRepository.swift in Sources */,
