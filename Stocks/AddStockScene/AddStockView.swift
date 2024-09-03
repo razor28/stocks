@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddStockView<ViewModel: AddStockViewModel>: View {
     @Environment(\.modelContext) var context
@@ -13,15 +14,16 @@ struct AddStockView<ViewModel: AddStockViewModel>: View {
 
     @ObservedObject var viewModel: ViewModel
     
+    @Query(sort: \StockListEntity.ticker) var stocks: [StockListEntity]
+    
+    @State private var predicate: Predicate<StockListEntity> = .true
+    
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.searchResults, id: \.self) { commanStock in
-                    StockItemView(commanStock: commanStock, selectionAction: {
-                        viewModel.didAdd(commanStock: commanStock, context: context)
-                        dismiss()
-                    })
-                }
+            LazyStockList(predicate: predicate) { stock in
+                let stock = StockEntity(ticker: stock.ticker, companyName: stock.companyName)
+                context.insert(stock)
+                dismiss()
             }
             .onAppear {
                 viewModel.onAppear()
@@ -37,10 +39,17 @@ struct AddStockView<ViewModel: AddStockViewModel>: View {
         .onSubmit(of: .search) {
             viewModel.onSearchSubmit()
         }
-        .onChange(of: viewModel.searchText) { _, _ in
-            viewModel.onSearchChange()
+        .onChange(of: viewModel.searchText) { old, new in
+//            viewModel.onSearchChange()
+            guard !new.isEmpty else {
+                predicate = .true
+                return
+            }
+            let textUppercased = new.uppercased()
+            predicate = #Predicate<StockListEntity> {
+                return $0.ticker.contains(textUppercased)
+            }
         }
-        
     }
 }
 

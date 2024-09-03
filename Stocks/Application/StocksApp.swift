@@ -14,6 +14,6 @@ struct StocksApp: App {
         WindowGroup {
             OverviewView()
         }
-        .modelContainer(for: [StockEntity.self])
+        .modelContainer(for: [StockEntity.self, StockListEntity.self])
     }
 }

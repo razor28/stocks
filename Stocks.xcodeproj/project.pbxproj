@@ -17,6 +17,9 @@
 		D82AF0D72C84FDF500B4B5FC /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82AF0D62C84FDF500B4B5FC /* ListView.swift */; };
 		D89582FA2C86422E002D688E /* StockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89582F92C86422E002D688E /* StockEntity.swift */; };
 		D89582FD2C864601002D688E /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89582FC2C864601002D688E /* Stock.swift */; };
+		D89583012C865EA9002D688E /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583002C865EA9002D688E /* OverviewViewModel.swift */; };
+		D89583032C865FED002D688E /* StockListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583022C865FED002D688E /* StockListEntity.swift */; };
+		D89583052C868E72002D688E /* LazyStockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583042C868E72002D688E /* LazyStockList.swift */; };
 		D89965752C8503E900713723 /* AddStockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965742C8503E900713723 /* AddStockView.swift */; };
 		D899657A2C8514CD00713723 /* CommanStocks.txt in Resources */ = {isa = PBXBuildFile; fileRef = D89965792C8514CD00713723 /* CommanStocks.txt */; };
 		D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899657B2C85162400713723 /* AddStockViewModel.swift */; };
@@ -58,6 +61,9 @@
 		D82AF0D62C84FDF500B4B5FC /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		D89582F92C86422E002D688E /* StockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockEntity.swift; sourceTree = "<group>"; };
 		D89582FC2C864601002D688E /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		D89583002C865EA9002D688E /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
+		D89583022C865FED002D688E /* StockListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListEntity.swift; sourceTree = "<group>"; };
+		D89583042C868E72002D688E /* LazyStockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyStockList.swift; sourceTree = "<group>"; };
 		D89965742C8503E900713723 /* AddStockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockView.swift; sourceTree = "<group>"; };
 		D89965792C8514CD00713723 /* CommanStocks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CommanStocks.txt; sourceTree = "<group>"; };
 		D899657B2C85162400713723 /* AddStockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewModel.swift; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				D82AF0D32C84FABF00B4B5FC /* OverviewView.swift */,
+				D89583002C865EA9002D688E /* OverviewViewModel.swift */,
 			);
 			path = OverviewScene;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				D89582F92C86422E002D688E /* StockEntity.swift */,
+				D89583022C865FED002D688E /* StockListEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 				D89965742C8503E900713723 /* AddStockView.swift */,
 				D899657F2C85222F00713723 /* StockItemView.swift */,
 				D899657B2C85162400713723 /* AddStockViewModel.swift */,
+				D89583042C868E72002D688E /* LazyStockList.swift */,
 			);
 			path = AddStockScene;
 			sourceTree = "<group>";
@@ -403,16 +412,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89583012C865EA9002D688E /* OverviewViewModel.swift in Sources */,
 				D82AF0D42C84FABF00B4B5FC /* OverviewView.swift in Sources */,
 				D89965752C8503E900713723 /* AddStockView.swift in Sources */,
 				D89582FD2C864601002D688E /* Stock.swift in Sources */,
 				D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */,
 				D899658E2C852F0300713723 /* ListViewViewModel.swift in Sources */,
+				D89583052C868E72002D688E /* LazyStockList.swift in Sources */,
 				D89582FA2C86422E002D688E /* StockEntity.swift in Sources */,
 				D82AF0A52C84F95700B4B5FC /* StocksApp.swift in Sources */,
 				D89965832C8528CF00713723 /* CommanStockUseCase.swift in Sources */,
 				D89965882C852A1800713723 /* CommanStockRepository.swift in Sources */,
 				D899658A2C852A9C00713723 /* DefaultCommanStockRepository.swift in Sources */,
+				D89583032C865FED002D688E /* StockListEntity.swift in Sources */,
 				D89965802C85222F00713723 /* StockItemView.swift in Sources */,
 				D82AF0D72C84FDF500B4B5FC /* ListView.swift in Sources */,
 			);
