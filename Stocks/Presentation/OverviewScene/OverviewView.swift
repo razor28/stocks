@@ -19,11 +19,17 @@ struct OverviewView<ViewModel: OverviewViewModel>: View {
     
     var body: some View {
         NavigationStack {
-            List(viewModel.stockInfos) { info in
-                NavigationLink {
-                    StockDetailsView(ticker: info.ticker, viewModel: DefaultStockDetailsViewModel())
-                } label: {
-                    Text("\(info.ticker)|$\(info.currentPrice)|\(info.dailyChange)")
+            VStack {
+                if selectedStocks.isEmpty {
+                    Text("Tap to 'List' to add interested stock/s")
+                } else {
+                    List(viewModel.stockInfos) { info in
+                        NavigationLink {
+                            StockDetailsView(ticker: info.ticker, viewModel: DefaultStockDetailsViewModel())
+                        } label: {
+                            Text("\(info.ticker)|$\(info.currentPrice)|\(info.dailyChange)")
+                        }
+                    }
                 }
             }
             .navigationTitle("Overview")

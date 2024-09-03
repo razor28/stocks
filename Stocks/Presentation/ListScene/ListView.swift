@@ -18,18 +18,24 @@ struct ListView<ViewModel: ListViewViewModel>: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(stocks, id: \.self) { entity in
-                    StockItemView(commanStock: "\(entity.ticker)|\(entity.companyName)", selectionAction: {
-                    })
-                }.onDelete(perform: { indexSet in
-                    for index in indexSet {
-                        let entity = stocks[index]
-                        viewModel.didDelete(stock: entity, context: context)
+            VStack {
+                if stocks.isEmpty {
+                    Text("Tap to 'Add' to add interested stock/s")
+                } else {
+                    List {
+                        ForEach(stocks, id: \.self) { entity in
+                            Text("\(entity.ticker)|\(entity.companyName)")
+                        }.onDelete(perform: { indexSet in
+                            for index in indexSet {
+                                let entity = stocks[index]
+                                viewModel.didDelete(stock: entity, context: context)
+                            }
+                        })
+                        
                     }
-                })
-                
-            }.onAppear {
+                }
+            }
+            .onAppear {
                 viewModel.onAppear()
             }
                 .navigationTitle("List of Stocks")

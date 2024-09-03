@@ -17,7 +17,7 @@ struct StockItemView: View {
             Spacer()
             Button(action: selectionAction, label: {
                 Text("Add")
-            })
+            }).padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
         }
     }
 }
