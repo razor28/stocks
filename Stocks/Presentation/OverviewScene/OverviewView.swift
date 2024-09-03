@@ -19,11 +19,11 @@ struct OverviewView<ViewModel: OverviewViewModel>: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.stockInfos) { info in
-                    let display = "\(info.ticker)|$\(info.currentPrice)|\(info.dailyChange)"
-                    StockItemView(commanStock: display, selectionAction: {
-                    })
+            List(viewModel.stockInfos) { info in
+                NavigationLink {
+                    StockDetailsView(ticker: info.ticker, viewModel: DefaultStockDetailsViewModel())
+                } label: {
+                    Text("\(info.ticker)|$\(info.currentPrice)|\(info.dailyChange)")
                 }
             }
             .navigationTitle("Overview")
