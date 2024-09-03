@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 class StockEntity {
-    var ticker: String
+    @Attribute(.unique) var ticker: String
     var companyName: String
 
     init(ticker: String, companyName: String) {

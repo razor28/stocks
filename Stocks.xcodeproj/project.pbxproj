@@ -26,6 +26,8 @@
 		D895830E2C86B583002D688E /* StockDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895830D2C86B583002D688E /* StockDetailsView.swift */; };
 		D89583102C86B7C6002D688E /* StockDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895830F2C86B7C6002D688E /* StockDetailsViewModel.swift */; };
 		D89583122C86B85C002D688E /* StockChartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583112C86B85C002D688E /* StockChartItem.swift */; };
+		D89583162C86D1F5002D688E /* LiveStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583152C86D1F5002D688E /* LiveStock.swift */; };
+		D89583182C86D50C002D688E /* LiveStocksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583172C86D50C002D688E /* LiveStocksResponse.swift */; };
 		D89965752C8503E900713723 /* AddStockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965742C8503E900713723 /* AddStockView.swift */; };
 		D899657A2C8514CD00713723 /* CommanStocks.txt in Resources */ = {isa = PBXBuildFile; fileRef = D89965792C8514CD00713723 /* CommanStocks.txt */; };
 		D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899657B2C85162400713723 /* AddStockViewModel.swift */; };
@@ -76,6 +78,8 @@
 		D895830D2C86B583002D688E /* StockDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsView.swift; sourceTree = "<group>"; };
 		D895830F2C86B7C6002D688E /* StockDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewModel.swift; sourceTree = "<group>"; };
 		D89583112C86B85C002D688E /* StockChartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockChartItem.swift; sourceTree = "<group>"; };
+		D89583152C86D1F5002D688E /* LiveStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStock.swift; sourceTree = "<group>"; };
+		D89583172C86D50C002D688E /* LiveStocksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStocksResponse.swift; sourceTree = "<group>"; };
 		D89965742C8503E900713723 /* AddStockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockView.swift; sourceTree = "<group>"; };
 		D89965792C8514CD00713723 /* CommanStocks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CommanStocks.txt; sourceTree = "<group>"; };
 		D899657B2C85162400713723 /* AddStockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewModel.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				D899657F2C85222F00713723 /* StockItemView.swift */,
 				D899657B2C85162400713723 /* AddStockViewModel.swift */,
 				D89583042C868E72002D688E /* LazyStockList.swift */,
+				D89583152C86D1F5002D688E /* LiveStock.swift */,
+				D89583172C86D50C002D688E /* LiveStocksResponse.swift */,
 			);
 			path = AddStockScene;
 			sourceTree = "<group>";
@@ -440,9 +446,11 @@
 			files = (
 				D89583012C865EA9002D688E /* OverviewViewModel.swift in Sources */,
 				D89583092C86A325002D688E /* StockInfoView.swift in Sources */,
+				D89583162C86D1F5002D688E /* LiveStock.swift in Sources */,
 				D82AF0D42C84FABF00B4B5FC /* OverviewView.swift in Sources */,
 				D89583122C86B85C002D688E /* StockChartItem.swift in Sources */,
 				D89965752C8503E900713723 /* AddStockView.swift in Sources */,
+				D89583182C86D50C002D688E /* LiveStocksResponse.swift in Sources */,
 				D89583102C86B7C6002D688E /* StockDetailsViewModel.swift in Sources */,
 				D89582FD2C864601002D688E /* Stock.swift in Sources */,
 				D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */,

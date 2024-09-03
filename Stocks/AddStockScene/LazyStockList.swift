@@ -20,13 +20,11 @@ struct LazyStockList: View {
     }
     
     var body: some View {
-        ScrollView(.vertical) {
-            LazyVStack {
-                ForEach(stocks, id: \.self) { stock in
-                    StockItemView(commanStock: "\(stock.ticker)|\(stock.companyName)", selectionAction: {
-                        selectionAction(stock)
-                    })
-                }
+        LazyVStack {
+            ForEach(stocks, id: \.self) { stock in
+                StockItemView(commanStock: "\(stock.ticker)|\(stock.companyName)", selectionAction: {
+                    selectionAction(stock)
+                })
             }
         }
     }

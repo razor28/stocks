@@ -20,13 +20,28 @@ struct AddStockView<ViewModel: AddStockViewModel>: View {
     
     var body: some View {
         NavigationStack {
-            LazyStockList(predicate: predicate) { stock in
-                let stock = StockEntity(ticker: stock.ticker, companyName: stock.companyName)
-                context.insert(stock)
-                dismiss()
-            }
-            .onAppear {
-                viewModel.onAppear()
+            ScrollView(.vertical) {
+                if viewModel.isLoading {
+                    Text("Loading")
+                } else {
+                    if viewModel.liveStocks.isEmpty {
+                        LazyStockList(predicate: predicate) { stock in
+                            let stock = StockEntity(ticker: stock.ticker, companyName: stock.companyName)
+                            context.insert(stock)
+                            dismiss()
+                        }
+                    } else {
+                        LazyVStack {
+                            ForEach(viewModel.liveStocks) { stock in
+                                StockItemView(commanStock: "\(stock.ticker)|\(stock.name)", selectionAction: {
+                                    let stock = StockEntity(ticker: stock.ticker, companyName: stock.name)
+                                    context.insert(stock)
+                                    dismiss()
+                                })
+                            }
+                        }
+                    }
+                }
             }
             .toolbar {
                 Button("Dismiss") {
@@ -40,7 +55,7 @@ struct AddStockView<ViewModel: AddStockViewModel>: View {
             viewModel.onSearchSubmit()
         }
         .onChange(of: viewModel.searchText) { old, new in
-//            viewModel.onSearchChange()
+            viewModel.onSearchChange()
             guard !new.isEmpty else {
                 predicate = .true
                 return
