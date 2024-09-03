@@ -12,7 +12,7 @@ import SwiftData
 struct StocksApp: App {
     var body: some Scene {
         WindowGroup {
-            OverviewView()
+            OverviewView(viewModel: DefaultOverviewViewModel())
         }
         .modelContainer(for: [StockEntity.self, StockListEntity.self])
     }

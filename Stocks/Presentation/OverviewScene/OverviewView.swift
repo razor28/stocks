@@ -8,14 +8,24 @@
 import SwiftUI
 import SwiftData
 
-struct OverviewView: View {
+struct OverviewView<ViewModel: OverviewViewModel>: View {
     @Environment(\.modelContext) var context
+    @Environment(\.scenePhase) var scenePhase
 
     @Query(sort: \StockListEntity.ticker) var stocks: [StockListEntity]
+    @Query(sort: \StockEntity.ticker) var selectedStocks: [StockEntity]
 
+    @ObservedObject var viewModel: ViewModel
+    
     var body: some View {
         NavigationStack {
-            Text("Start")
+            List {
+                ForEach(viewModel.stockInfos) { info in
+                    let display = "\(info.ticker)|$\(info.currentPrice)|\(info.dailyChange)"
+                    StockItemView(commanStock: display, selectionAction: {
+                    })
+                }
+            }
             .navigationTitle("Overview")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -29,6 +39,16 @@ struct OverviewView: View {
                 if stocks.isEmpty {
                     preceedStockList()
                 }
+            }
+            .refreshable {
+                viewModel.onRefresh(selectedStocks: selectedStocks)
+            }
+            .onChange(of: selectedStocks) {
+                viewModel.onChange(selectedStocks: selectedStocks)
+            }
+            .onChange(of: scenePhase) { oldPhase, newPhase in
+                guard newPhase == .active else { return }
+                viewModel.onReturnForeground(selectedStocks: selectedStocks)
             }
         }
     }
@@ -59,5 +79,5 @@ struct OverviewView: View {
 }
 
 #Preview {
-    OverviewView()
+    OverviewView(viewModel: DefaultOverviewViewModel())
 }

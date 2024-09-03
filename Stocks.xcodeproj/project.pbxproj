@@ -20,6 +20,9 @@
 		D89583012C865EA9002D688E /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583002C865EA9002D688E /* OverviewViewModel.swift */; };
 		D89583032C865FED002D688E /* StockListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583022C865FED002D688E /* StockListEntity.swift */; };
 		D89583052C868E72002D688E /* LazyStockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583042C868E72002D688E /* LazyStockList.swift */; };
+		D89583072C86A2A1002D688E /* StockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583062C86A2A1002D688E /* StockInfo.swift */; };
+		D89583092C86A325002D688E /* StockInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89583082C86A325002D688E /* StockInfoView.swift */; };
+		D895830B2C86AA2E002D688E /* InfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D895830A2C86AA2E002D688E /* InfoResponse.swift */; };
 		D89965752C8503E900713723 /* AddStockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89965742C8503E900713723 /* AddStockView.swift */; };
 		D899657A2C8514CD00713723 /* CommanStocks.txt in Resources */ = {isa = PBXBuildFile; fileRef = D89965792C8514CD00713723 /* CommanStocks.txt */; };
 		D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899657B2C85162400713723 /* AddStockViewModel.swift */; };
@@ -64,6 +67,9 @@
 		D89583002C865EA9002D688E /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
 		D89583022C865FED002D688E /* StockListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListEntity.swift; sourceTree = "<group>"; };
 		D89583042C868E72002D688E /* LazyStockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyStockList.swift; sourceTree = "<group>"; };
+		D89583062C86A2A1002D688E /* StockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfo.swift; sourceTree = "<group>"; };
+		D89583082C86A325002D688E /* StockInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfoView.swift; sourceTree = "<group>"; };
+		D895830A2C86AA2E002D688E /* InfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoResponse.swift; sourceTree = "<group>"; };
 		D89965742C8503E900713723 /* AddStockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockView.swift; sourceTree = "<group>"; };
 		D89965792C8514CD00713723 /* CommanStocks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CommanStocks.txt; sourceTree = "<group>"; };
 		D899657B2C85162400713723 /* AddStockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +205,9 @@
 			children = (
 				D82AF0D32C84FABF00B4B5FC /* OverviewView.swift */,
 				D89583002C865EA9002D688E /* OverviewViewModel.swift */,
+				D89583062C86A2A1002D688E /* StockInfo.swift */,
+				D89583082C86A325002D688E /* StockInfoView.swift */,
+				D895830A2C86AA2E002D688E /* InfoResponse.swift */,
 			);
 			path = OverviewScene;
 			sourceTree = "<group>";
@@ -413,10 +422,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89583012C865EA9002D688E /* OverviewViewModel.swift in Sources */,
+				D89583092C86A325002D688E /* StockInfoView.swift in Sources */,
 				D82AF0D42C84FABF00B4B5FC /* OverviewView.swift in Sources */,
 				D89965752C8503E900713723 /* AddStockView.swift in Sources */,
 				D89582FD2C864601002D688E /* Stock.swift in Sources */,
 				D899657C2C85162400713723 /* AddStockViewModel.swift in Sources */,
+				D89583072C86A2A1002D688E /* StockInfo.swift in Sources */,
+				D895830B2C86AA2E002D688E /* InfoResponse.swift in Sources */,
 				D899658E2C852F0300713723 /* ListViewViewModel.swift in Sources */,
 				D89583052C868E72002D688E /* LazyStockList.swift in Sources */,
 				D89582FA2C86422E002D688E /* StockEntity.swift in Sources */,
